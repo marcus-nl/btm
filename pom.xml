@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.codehaus</groupId>
-        <artifactId>codehaus-parent</artifactId>
-        <version>4</version>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
     </parent>
 
-    <groupId>org.codehaus.btm</groupId>
+    <groupId>com.github.marcus-nl.btm</groupId>
     <artifactId>btm-parent</artifactId>
     <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -40,9 +39,9 @@
     </licenses>
 
     <scm>
-        <url>git@github.com:bitronix/btm.git</url>
-        <connection>scm:git:git@github.com/bitronix/btm.git</connection>
-        <developerConnection>scm:git:git@github.com:bitronix/btm.git</developerConnection>
+        <url>git@github.com:marcus-nl/btm.git</url>
+        <connection>scm:git:git@github.com/marcus-nl/btm.git</connection>
+        <developerConnection>scm:git:git@github.com:marcus-nl/btm.git</developerConnection>
     </scm>
 
     <developers>
@@ -78,32 +77,52 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.codehaus.btm</groupId>
+                <groupId>com.github.marcus-nl.btm</groupId>
                 <artifactId>btm</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.btm</groupId>
+                <groupId>com.github.marcus-nl.btm</groupId>
                 <artifactId>btm</artifactId>
                 <version>${project.version}</version>
                 <classifier>test-sources</classifier>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.btm</groupId>
+                <groupId>com.github.marcus-nl.btm</groupId>
                 <artifactId>btm</artifactId>
                 <version>${project.version}</version>
                 <classifier>sources</classifier>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.btm</groupId>
+                <groupId>com.github.marcus-nl.btm</groupId>
                 <artifactId>btm</artifactId>
                 <version>${project.version}</version>
                 <classifier>javadoc</classifier>
             </dependency>
             <dependency>
-                <groupId>org.codehaus.btm</groupId>
+                <groupId>com.github.marcus-nl.btm</groupId>
                 <artifactId>btm</artifactId>
                 <type>test-jar</type>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.marcus-nl.btm</groupId>
+                <artifactId>btm-jetty6-lifecycle</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.marcus-nl.btm</groupId>
+                <artifactId>btm-jetty7-lifecycle</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.marcus-nl.btm</groupId>
+                <artifactId>btm-tomcat55-lifecycle</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.marcus-nl.btm</groupId>
+                <artifactId>btm-spring</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -268,11 +287,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.2.2</version>
+                    <version>2.5.3</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <username>git</username>
                         <tagNameFormat>btm-@{project.version}</tagNameFormat>
-                        <arguments>-Pdist</arguments>
+                        <arguments>${arguments} -Pdist,sonatype-oss-release</arguments>
                     </configuration>
                 </plugin>
                 <plugin>
