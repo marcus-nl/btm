@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.marcus-nl.btm</groupId>
         <artifactId>btm-parent</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>3.0.0-mk1</version>
     </parent>
     <artifactId>btm-jetty6-lifecycle</artifactId>
     <name>Bitronix Transaction Manager :: Jetty 6 lifecycle</name>

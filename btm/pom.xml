@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.marcus-nl.btm</groupId>
         <artifactId>btm-parent</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>3.0.0-mk1</version>
     </parent>
 
     <artifactId>btm</artifactId>
@@ -93,7 +93,7 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <target>
-                                <mkdir dir="${basedir}/target/generated-sources/btm/bitronix/tm"/>
+                                <mkdir dir="${basedir}/target/generated-sources/btm/bitronix/tm" />
                                 <echo file="${basedir}/target/generated-sources/btm/bitronix/tm/Version.java">
 /* This is generated code, do not modify */
 package bitronix.tm;
@@ -198,7 +198,7 @@ public final class Version {
                             javax.swing.event;resolution:=optional,
                             javax.swing.table;resolution:=optional,
                             javax.swing.tree;resolution:=optional
-                        </Import-Package> -->
+                        </Import-Package> --&gt;
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
