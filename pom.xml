@@ -10,7 +10,7 @@
 
     <groupId>com.github.marcus-nl.btm</groupId>
     <artifactId>btm-parent</artifactId>
-    <version>3.0.0-mk1</version>
+    <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Bitronix Transaction Manager</name>
@@ -42,7 +42,7 @@
         <url>git@github.com:marcus-nl/btm.git</url>
         <connection>scm:git:git@github.com/marcus-nl/btm.git</connection>
         <developerConnection>scm:git:git@github.com:marcus-nl/btm.git</developerConnection>
-      <tag>btm-3.0.0-mk1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <developers>
